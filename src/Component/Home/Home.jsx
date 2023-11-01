@@ -1,8 +1,14 @@
+import Banner from "../Banner/Banner";
+import Category from "../CategoryList/Category";
+import Featured from "../Featured Jobs/Featured";
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome Home</h1>
+        <div className="container mx-auto">
+            
+            <Banner></Banner>
+            <Category></Category>
+            <Featured></Featured>
         </div>
     );
 };
