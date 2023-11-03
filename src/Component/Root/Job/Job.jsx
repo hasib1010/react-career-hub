@@ -1,9 +1,10 @@
 import { MdOutlineLocationOn } from 'react-icons/Md';
 import { AiOutlineDollarCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Job = ({ jobData }) => {
     console.log(jobData);
-    const { logo, remote_or_onsite, company_name, job_title, location, salary, job_type } = jobData;
+    const {id, logo, remote_or_onsite, company_name, job_title, location, salary, job_type } = jobData;
 
     return (
         <div className="flex flex-col justify-between items-start gap-2 p-5 m-3 bg-slate-100 w-80 rounded-lg">
@@ -18,7 +19,7 @@ const Job = ({ jobData }) => {
            <p className='flex items-center'><MdOutlineLocationOn className='text-2xl text-black'></MdOutlineLocationOn>{location}</p>
             <p className='flex items-center'><AiOutlineDollarCircle className='text-2xl text-black'></AiOutlineDollarCircle>{salary}</p>
            </div>
-            <button className="btn bg-purple-600 text-white normal-case">View Details</button>
+         <Link to={`/job/${id}`}><button className="btn bg-purple-600 text-white normal-case">View Details</button></Link>
         </div>
     );
 };
